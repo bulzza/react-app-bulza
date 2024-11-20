@@ -4,10 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ThemeProvider } from "@material-tailwind/react";
+import { DestinationProvider } from './contex/DestinationContext';
+import { TravelProvider } from './contex/TravelContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    
+      <DestinationProvider>
+        <TravelProvider>
+        <App />
+        </TravelProvider>
+      </DestinationProvider>
+    
   </React.StrictMode>
 );
 
